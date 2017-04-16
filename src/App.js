@@ -12,6 +12,7 @@ const ImageTransformations = ({width, rgb, selectedShirt, text}) => {
       <Transformation effect={'green:'+((-1+rgb.g/255)*100).toFixed(0)} />
       <Transformation underlay={selectedShirt.underlay} flags="relative" width="1.0" />
       <Transformation overlay={selectedShirt.overlay} flags="relative" width="1.0" />
+      <Transformation overlay={'text:Roboto_30:'+text} flags="relative" gravity="center" />
     </Image>
   );
 };
@@ -38,6 +39,10 @@ class App extends Component {
   handleColorChange(color) {
     // Updates color
     this.setState({ background: color }, _ => this.forceUpdate());
+  }
+
+  handleTextChange(event) {
+    this.setState({text: event.target.value}, _ => this.forceUpdate());
   }
 
   selectedShirt(thumb) {
