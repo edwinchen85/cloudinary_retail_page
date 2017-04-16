@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Image, CloudinaryContext, Transformation} from 'cloudinary-react';
-import { SketchPicker } = 'react-color';
+import { SketchPicker } from 'react-color';
 import './App.css';
 
 const ImageTransformations = ({width, rgb, selectedShirt, text}) => {
